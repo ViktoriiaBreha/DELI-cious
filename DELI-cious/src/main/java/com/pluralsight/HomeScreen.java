@@ -4,24 +4,25 @@ import java.util.Scanner;
 
 public class HomeScreen {
 
-
     public static void displayMenu() throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
         boolean run = true;
 
         //Main menu with 2 options
-        while (run){
+        while (run) {
+            System.out.println(" ");
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~");
-            System.out.println("~~~~~~~~DELI-cious~~~~~~~");
+            System.out.println("~~~~~🥪DELI-cious🥪~~~~~");
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~");
             System.out.println(" ");
-            System.out.println("1. New order");
-            System.out.println("0. Exit");
+            System.out.println("1. New order ➕");
+            System.out.println("0. Exit ➖");
             System.out.print("Number:");
             int choice_number = scanner.nextInt();
 
-            switch (choice_number){
+            switch (choice_number) {
                 case 1:
+                    OrderScreen.displayOrderScreen();
                     break;
                 case 0:
                     System.out.println("Thank you for using\"DELI-cious\"! Sew you soon!");
@@ -39,5 +40,4 @@ public class HomeScreen {
             }
         }
     }
-
 }

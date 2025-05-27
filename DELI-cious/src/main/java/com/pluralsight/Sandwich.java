@@ -12,14 +12,14 @@ public class Sandwich extends ItemToOrder{
     private List<String>toppings;
     private List<String>sauces;
 
-    public Sandwich(double price, int size, String description, String typeOfBread, boolean isToasted, List<String> meats, List<String> cheeses, List<String> toppings, List<String> sauces) {
-        super(price, size, description);
+    public Sandwich( int size, String typeOfBread, boolean isToasted) {
+        super(0.00, size , "");
         this.typeOfBread = typeOfBread;
         this.isToasted = isToasted;
-        this.meats = new ArrayList<>();
-        this.cheeses = new ArrayList<>();
-        this.toppings = new ArrayList<>();
-        this.sauces = new ArrayList<>();
+        this.meats = new ArrayList<>(meats);
+        this.cheeses = new ArrayList<>(cheeses);
+        this.toppings = new ArrayList<>(toppings);
+        this.sauces = new ArrayList<>(sauces);
     }
 
     public void addMeat (String meat){
@@ -68,7 +68,10 @@ public class Sandwich extends ItemToOrder{
         return basePrice;
     }
 
-
-
-
+    //Structure of displaying
+    @Override
+    public String getDescription() {
+        return "\nSize: " + size + " | \nSandwich with " + typeOfBread + " bread | " + (isToasted ? "toasted: " : "") +
+                " | \nMeat: " + meats + " | \nCheese: " + cheeses + " | \nTopping: " + toppings + " | \nSauces: " + sauces;
+    }
 }
