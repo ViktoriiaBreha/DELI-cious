@@ -28,6 +28,7 @@ public class OrderScreen {
                     Sandwich sandwich = MakeSandwich.createSandwich();
                     break;
                 case 2:
+                    Drink drink = MakeDrink.createDrink();
                     break;
                 case 3:
                     break;

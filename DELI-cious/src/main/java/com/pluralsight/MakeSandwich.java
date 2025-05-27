@@ -22,8 +22,8 @@ public class MakeSandwich {
         System.out.println("~~~Toasted~~~");
         System.out.println("yes | no");
         System.out.print("Your choice: ");
-        //Think about ignore case!!!
-        boolean isToasted = scanner.nextBoolean();
+        String toastInput = scanner.nextLine().toLowerCase();
+        boolean isToasted = toastInput.equals(" ");
 
         Sandwich sandwich = new Sandwich(choiceSize,choiceBread,isToasted);
 
@@ -31,13 +31,26 @@ public class MakeSandwich {
         System.out.println("steak | ham | salami | roast beef | chicken | bacon");
         System.out.print("Your choice: ");
         String choiceMeat = scanner.nextLine();
+        System.out.println("Would do you like an extra meat?(yes/no)");
+        System.out.print("Your answer: ");
+        String extraMeat = scanner.nextLine().toLowerCase();
+        if (extraMeat.equals("yes")){
+            sandwich.setExtraMeat(true);
+        }
         sandwich.addMeat(choiceMeat);
 
         System.out.println("~~~Cheese~~~");
         System.out.println("american | provolone | cheddar | swiss");
         System.out.print("Your choice: ");
         String choiceCheese = scanner.nextLine();
+        System.out.println("Would do you like an extra cheese?(yes/no)");
+        System.out.print("Your answer: ");
+        String extraCheese = scanner.nextLine().toLowerCase();
+        if (extraCheese.equals("yes")){
+            sandwich.setExtraCheese(true);
+        }
         sandwich.addCheese(choiceCheese);
+
 
         System.out.println("~~~Regular Toppings~~~");
         System.out.println("lettuce | peppers | onions | tomatoes | jalapenos | cucumbers | pickles | guacamole | " +

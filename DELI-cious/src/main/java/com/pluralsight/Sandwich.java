@@ -11,15 +11,18 @@ public class Sandwich extends ItemToOrder{
     private List<String>cheeses;
     private List<String>toppings;
     private List<String>sauces;
+    private boolean isExtraMeat;
+    private boolean isExtraCheese;
+
 
     public Sandwich( int size, String typeOfBread, boolean isToasted) {
         super(0.00, size , "");
         this.typeOfBread = typeOfBread;
         this.isToasted = isToasted;
-        this.meats = new ArrayList<>(meats);
-        this.cheeses = new ArrayList<>(cheeses);
-        this.toppings = new ArrayList<>(toppings);
-        this.sauces = new ArrayList<>(sauces);
+        this.meats = new ArrayList<>();
+        this.cheeses = new ArrayList<>();
+        this.toppings = new ArrayList<>();
+        this.sauces = new ArrayList<>();
     }
 
     public void addMeat (String meat){
@@ -42,6 +45,9 @@ public class Sandwich extends ItemToOrder{
     @Override
     public double getPrice (){
         double basePrice;
+        double meatPrice;
+        double cheesePrice;
+
         switch (size){
             case 4:
                 basePrice = 5.50;
@@ -57,21 +63,69 @@ public class Sandwich extends ItemToOrder{
                 break;
         }
 
-        //Calculate price with meat
-        basePrice += meats.size() * 1.00;
+        //Calculate base prices for meat and cheese depend on size
+        switch (size) {
+            case 4:
+                meatPrice = 1.00;
+                cheesePrice = 0.75;
+                break;
+            case 8:
+                meatPrice = 1.50;
+                cheesePrice = 1.00;
+                break;
+            case 12:
+                meatPrice = 2.00;
+                cheesePrice = 1.25;
+                break;
+            default:
+                meatPrice = 0.00;
+                cheesePrice = 0.00;
+                break;
+        }
 
-        //Calculate price with cheese
-        basePrice += cheeses.size() + 0.75;
+        basePrice += meats.size() * meatPrice;
+        basePrice += cheeses.size() * cheesePrice;
 
         //Toppings, sauces are included
 
+        // Calculate extra meat and cheese
+
+        if (isExtraMeat){
+            basePrice += switch (size) {
+                case 4 -> 0.50;
+                case 8 -> 1.00;
+                case 12 -> 1.50;
+                default -> 0.00;
+            };
+        }
+        if (isExtraCheese){
+            basePrice += switch (size) {
+                case 4 -> 0.30;
+                case 8 -> 0.60;
+                case 12 -> 0.90;
+                default -> 0.00;
+            };
+        }
         return basePrice;
     }
+
+    public void setExtraMeat(boolean extraMeat) {
+        isExtraMeat = extraMeat;
+    }
+
+    public void setExtraCheese(boolean extraCheese) {
+        isExtraCheese = extraCheese;
+    }
+
+
 
     //Structure of displaying
     @Override
     public String getDescription() {
-        return "\nSize: " + size + " | \nSandwich with " + typeOfBread + " bread | " + (isToasted ? "toasted: " : "") +
-                " | \nMeat: " + meats + " | \nCheese: " + cheeses + " | \nTopping: " + toppings + " | \nSauces: " + sauces;
+        return size + "\" sandwich on " + typeOfBread + (isToasted ? " (toasted)" : "") +
+                "\nMeats: " + meats + (isExtraMeat ? " + Extra Meat" : "") +
+                "\nCheeses: " + cheeses + (isExtraCheese ? " + Extra Cheese" : "") +
+                "\nToppings: " + toppings +
+                "\nSauces: " + sauces;
     }
 }
