@@ -4,7 +4,7 @@ public class Drink extends ItemToOrder {
 
     private String letterSize;
 
-    public Drink(String letterSize) {
+    public Drink(String letterSize, String choiceTypeDrink) {
         super(0.00, 0, " ");
         this.letterSize = letterSize.toUpperCase();
 
@@ -12,22 +12,22 @@ public class Drink extends ItemToOrder {
             case "S":
                 this.size = 1;
                 this.price = 2.00;
-                this.description = "Small drink";
+                this.description = "\nSmall drink" + " " + choiceTypeDrink ;
                 break;
             case "M":
                 this.size = 2;
                 this.price = 2.50;
-                this.description = "Medium drink";
+                this.description = "\nMedium drink";
                 break;
             case "L":
                 this.size = 3;
                 this.price = 3.00;
-                this.description = "Large drink";
+                this.description = "\nLarge drink";
                 break;
             default:
                 this.size = 0;
                 this.price = 0.00;
-                this.description = "Invalid input. Try again";
+                this.description = "\nInvalid input. Try again";
 
         }
     }

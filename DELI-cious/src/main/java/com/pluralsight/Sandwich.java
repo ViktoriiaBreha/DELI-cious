@@ -128,7 +128,7 @@ public class Sandwich extends ItemToOrder{
     //Structure of displaying
     @Override
     public String getDescription() {
-        return size + "\" sandwich on " + typeOfBread + "bread" + (isToasted ? " (toasted)" : "") +
+        return "\n" + size + "\" sandwich on " + typeOfBread + " bread" + (isToasted ? " (toasted)" : "") +
                 "\nMeats: " + (meats.isEmpty() ? "None" : meats.toString()) + (isExtraMeat ? " + Extra Meat" : "") +
                 "\nCheeses: " + (cheeses.isEmpty() ? "None" : cheeses.toString()) + (isExtraCheese ? " + Extra Cheese" : "") +
                 "\nToppings: " + (toppings.isEmpty() ? "None" : toppings.toString()) +

@@ -1,0 +1,12 @@
+4" sandwich on white bread
+Meats: [ham] + Extra Meat
+Cheeses: [swiss]
+Toppings: [lettuce]
+Sauces: [mayo]
+Side: [sauce] $7.75Medium drink $2.50Chips🍟 $1.50Chips🍟 $1.5012" sandwich on rye bread
+Meats: [salami] + Extra Meat
+Cheeses: [cheddar] + Extra Cheese
+Toppings: [onions, pickles]
+Sauces: [mayi, mayo]
+Side: [au jus] $14.15
+Your total: $27.40

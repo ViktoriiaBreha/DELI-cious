@@ -1,0 +1,12 @@
+
+Small drink apple juice- $2.00
+Small drink dr pepper- $2.008
+" sandwich on wheat bread
+Meats: [ham]
+Cheeses: [swiss] + Extra Cheese
+Toppings: None
+Sauces: None
+Side: [sauce]- $10.10
+Chips🍟- $1.50
+Chips🍟- $1.50
+Your total: $17.10

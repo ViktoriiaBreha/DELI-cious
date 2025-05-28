@@ -1,0 +1,8 @@
+
+4" sandwich on white bread
+Meats: [steak] + Extra Meat
+Cheeses: [american] + Extra Cheese
+Toppings: None
+Sauces: None
+Side: [sauce]- $8.05
+Your total: $8.05

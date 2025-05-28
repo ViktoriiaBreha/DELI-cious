@@ -1,0 +1,7 @@
+12" sandwich on wrapbread
+Meats: [ham] + Extra Meat
+Cheeses: [american] + Extra Cheese
+Toppings: [cucumbers]
+Sauces: [mayo]
+Side: [sauce] $14.15Large drink $3.00Chips $1.50
+Your total: $18.65
