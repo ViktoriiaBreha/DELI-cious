@@ -1,0 +1,7 @@
+4" sandwich on white
+Meats: [ham] + Extra Meat
+Cheeses: [american] + Extra Cheese
+Toppings: [lettuce, onions]
+Sauces: [ranch, mayo]
+Side: [au jus]
+$8.05Your total: $8.05

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class OrderScreen {
 
     //Creating order screen with 5 options that will allow to interact with order
-    public static void displayOrderScreen() {
+    public static void displayOrderScreen(OrderReceipt orderReceipt) {
         Scanner scanner = new Scanner(System.in);
         boolean run = true;
 
@@ -26,13 +26,17 @@ public class OrderScreen {
             switch (numberOfOrderScreen) {
                 case 1:
                     Sandwich sandwich = MakeSandwich.createSandwich();
+                    orderReceipt.addEachItem(sandwich);
                     break;
                 case 2:
                     Drink drink = MakeDrink.createDrink();
+                    orderReceipt.addEachItem(drink);
                     break;
                 case 3:
+                    orderReceipt.addEachItem(new Chips());
                     break;
                 case 4:
+                    orderReceipt.printReceipt();
                     break;
                 case 0:
                     System.out.println("Order is canceled");

@@ -13,9 +13,10 @@ public class Sandwich extends ItemToOrder{
     private List<String>sauces;
     private boolean isExtraMeat;
     private boolean isExtraCheese;
+    private ArrayList<String> sides;
 
 
-    public Sandwich( int size, String typeOfBread, boolean isToasted) {
+    public Sandwich(int size, String typeOfBread, boolean isToasted) {
         super(0.00, size , "");
         this.typeOfBread = typeOfBread;
         this.isToasted = isToasted;
@@ -23,6 +24,7 @@ public class Sandwich extends ItemToOrder{
         this.cheeses = new ArrayList<>();
         this.toppings = new ArrayList<>();
         this.sauces = new ArrayList<>();
+        this.sides = new ArrayList<>();
     }
 
     public void addMeat (String meat){
@@ -39,6 +41,10 @@ public class Sandwich extends ItemToOrder{
 
     public void addSauce (String sauce){
         sauces.add(sauce);
+    }
+
+    public void addSide (String side){
+        sides.add(side);
     }
 
     //Calculate a general price
@@ -122,10 +128,11 @@ public class Sandwich extends ItemToOrder{
     //Structure of displaying
     @Override
     public String getDescription() {
-        return size + "\" sandwich on " + typeOfBread + (isToasted ? " (toasted)" : "") +
-                "\nMeats: " + meats + (isExtraMeat ? " + Extra Meat" : "") +
-                "\nCheeses: " + cheeses + (isExtraCheese ? " + Extra Cheese" : "") +
-                "\nToppings: " + toppings +
-                "\nSauces: " + sauces;
+        return size + "\" sandwich on " + typeOfBread + "bread" + (isToasted ? " (toasted)" : "") +
+                "\nMeats: " + (meats.isEmpty() ? "None" : meats.toString()) + (isExtraMeat ? " + Extra Meat" : "") +
+                "\nCheeses: " + (cheeses.isEmpty() ? "None" : cheeses.toString()) + (isExtraCheese ? " + Extra Cheese" : "") +
+                "\nToppings: " + (toppings.isEmpty() ? "None" : toppings.toString()) +
+                "\nSauces: " + (sauces.isEmpty() ? "None" : sauces.toString()) +
+                "\nSide: " + (sides.isEmpty() ? "None" : sides.toString());
     }
 }

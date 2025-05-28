@@ -1,0 +1,8 @@
+8" sandwich on 
+Meats: [ham]
+Cheeses: [swiss]
+Toppings: [lettuce, done]
+Sauces: [mayo, done]
+Side: [sauce]
+$9.50Invalid input. Try again
+$0.00Your total: $9.50

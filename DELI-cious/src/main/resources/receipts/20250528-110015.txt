@@ -1,0 +1,7 @@
+4" sandwich on 
+Meats: [steak]
+Cheeses: [american]
+Toppings: [peppers, done]
+Sauces: [mayo, done]
+Side: [au jus]
+$7.25Your total: $7.25

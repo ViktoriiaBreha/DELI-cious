@@ -13,8 +13,7 @@ public class MakeDrink {
         System.out.println("~~~Sizes~~~");
         System.out.println("S | M | L");
         System.out.print("Your choice: ");
-        String choiceDrink = scanner.nextLine().toLowerCase();
-        scanner.nextLine();
+        String choiceDrink = scanner.nextLine().toUpperCase();
 
         Drink drink = new Drink(choiceDrink);
         return drink;

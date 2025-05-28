@@ -16,8 +16,8 @@ public class MakeSandwich {
         System.out.println("~~~Breads~~~");
         System.out.println("white | wheat | rye | wrap");
         System.out.print("Your choice: ");
-        String choiceBread = scanner.nextLine().toLowerCase();
         scanner.nextLine();
+        String choiceBread = scanner.nextLine().toLowerCase();
 
         System.out.println("~~~Toasted~~~");
         System.out.println("yes | no");
@@ -52,18 +52,40 @@ public class MakeSandwich {
         sandwich.addCheese(choiceCheese);
 
 
+        //Ability to add as mush as they want until DONE
         System.out.println("~~~Regular Toppings~~~");
         System.out.println("lettuce | peppers | onions | tomatoes | jalapenos | cucumbers | pickles | guacamole | " +
                 "mushrooms");
-        System.out.print("Your choice: ");
-        String choiceTopping = scanner.nextLine();
-        sandwich.addTopping(choiceTopping);
+        boolean run = true;
+        while (run){
+            System.out.print("Your choice('done' to finish): ");
+            String choiceTopping = scanner.nextLine();
+            if (choiceTopping.equalsIgnoreCase("done")){
+                run = false;
+            }else if (!choiceTopping.isEmpty()){
+                sandwich.addTopping(choiceTopping);
+            }
+        }
 
         System.out.println("~~~Sauces~~~");
         System.out.println("mayo | mustard | ketchup | ranch | thousand islands | vinaigrette");
+        boolean run2 = true;
+        while (run2){
+            System.out.print("Your choice('done' to finish): ");
+            String choiceSauces = scanner.nextLine();
+            if (choiceSauces.equalsIgnoreCase("done")){
+                run2 = false;
+            } else if (!choiceSauces.isEmpty()) {
+                sandwich.addSauce(choiceSauces);
+            }
+        }
+
+        //Add one side
+        System.out.println("~~~Side~~~");
+        System.out.println("au jus | sauce");
         System.out.print("Your choice: ");
-        String choiceSauces = scanner.nextLine();
-        sandwich.addSauce(choiceSauces);
+        String choiceSide = scanner.nextLine();
+        sandwich.addSide(choiceSide);
 
         return sandwich;
     }

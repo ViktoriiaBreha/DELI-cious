@@ -22,7 +22,8 @@ public class HomeScreen {
 
             switch (choice_number) {
                 case 1:
-                    OrderScreen.displayOrderScreen();
+                    OrderReceipt orderReceipt = new OrderReceipt();
+                    OrderScreen.displayOrderScreen(orderReceipt);
                     break;
                 case 0:
                     System.out.println("Thank you for using\"DELI-cious\"! Sew you soon!");
