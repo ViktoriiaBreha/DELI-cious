@@ -37,6 +37,13 @@ public class OrderScreen {
                     break;
                 case 4:
                     orderReceipt.printReceipt();
+                    System.out.println("\nThank you for ordering!");
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
+                    run = false; // Exit to return to home screen
                     break;
                 case 0:
                     System.out.println("Order is canceled");
