@@ -3,7 +3,6 @@ package com.pluralsight;
 import java.util.Scanner;
 
 public class HomeScreen {
-
     public static void displayMenu() throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
         boolean run = true;
@@ -37,7 +36,6 @@ public class HomeScreen {
                     break;
                 default:
                     System.out.println("Invalid input. Try again.");
-
             }
         }
     }

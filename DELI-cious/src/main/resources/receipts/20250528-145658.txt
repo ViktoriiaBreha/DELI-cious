@@ -1,0 +1,8 @@
+
+4" sandwich on white bread (toasted)
+Meats: [ham]
+Cheeses: [american]
+Toppings: None
+Sauces: None
+Side: [sauce]- $7.25
+Your total: $7.25

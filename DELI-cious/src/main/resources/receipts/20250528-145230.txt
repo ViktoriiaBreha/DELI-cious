@@ -1,0 +1,8 @@
+
+4" sandwich on white bread
+Meats: [ham]
+Cheeses: [american] + Extra Cheese
+Toppings: [lettuce]
+Sauces: None
+Side: [sauce]- $7.55
+Your total: $7.55

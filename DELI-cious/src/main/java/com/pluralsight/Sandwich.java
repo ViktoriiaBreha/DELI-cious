@@ -3,21 +3,21 @@ package com.pluralsight;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sandwich extends ItemToOrder{
+public class Sandwich extends ItemToOrder {
 
     private String typeOfBread;
     private boolean isToasted;
-    private List<String>meats;
-    private List<String>cheeses;
-    private List<String>toppings;
-    private List<String>sauces;
+    private List<String> meats;
+    private List<String> cheeses;
+    private List<String> toppings;
+    private List<String> sauces;
     private boolean isExtraMeat;
     private boolean isExtraCheese;
     private ArrayList<String> sides;
 
 
     public Sandwich(int size, String typeOfBread, boolean isToasted) {
-        super(0.00, size , "");
+        super(0.00, size, "");
         this.typeOfBread = typeOfBread;
         this.isToasted = isToasted;
         this.meats = new ArrayList<>();
@@ -27,34 +27,34 @@ public class Sandwich extends ItemToOrder{
         this.sides = new ArrayList<>();
     }
 
-    public void addMeat (String meat){
+    public void addMeat(String meat) {
         meats.add(meat);
     }
 
-    public void addCheese (String cheese){
+    public void addCheese(String cheese) {
         cheeses.add(cheese);
     }
 
-    public void addTopping (String topping){
+    public void addTopping(String topping) {
         toppings.add(topping);
     }
 
-    public void addSauce (String sauce){
+    public void addSauce(String sauce) {
         sauces.add(sauce);
     }
 
-    public void addSide (String side){
+    public void addSide(String side) {
         sides.add(side);
     }
 
     //Calculate a general price
     @Override
-    public double getPrice (){
+    public double getPrice() {
         double basePrice;
         double meatPrice;
         double cheesePrice;
 
-        switch (size){
+        switch (size) {
             case 4:
                 basePrice = 5.50;
                 break;
@@ -96,7 +96,7 @@ public class Sandwich extends ItemToOrder{
 
         // Calculate extra meat and cheese
 
-        if (isExtraMeat){
+        if (isExtraMeat) {
             basePrice += switch (size) {
                 case 4 -> 0.50;
                 case 8 -> 1.00;
@@ -104,7 +104,7 @@ public class Sandwich extends ItemToOrder{
                 default -> 0.00;
             };
         }
-        if (isExtraCheese){
+        if (isExtraCheese) {
             basePrice += switch (size) {
                 case 4 -> 0.30;
                 case 8 -> 0.60;
@@ -122,8 +122,6 @@ public class Sandwich extends ItemToOrder{
     public void setExtraCheese(boolean extraCheese) {
         isExtraCheese = extraCheese;
     }
-
-
 
     //Structure of displaying
     @Override
